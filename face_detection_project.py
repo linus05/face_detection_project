@@ -8,7 +8,7 @@ haar_eyes = cv.CascadeClassifier("haarcascade_eye.xml")
 video_capture = cv.VideoCapture(0)
 
 if not video_capture.isOpened():
-    print("Cannot open camera")
+    print("Cannot open camera!!!")
     exit()
 while True:
     ret, frame = video_capture.read()
@@ -38,7 +38,7 @@ while True:
         for (ex, ey, ew, eh) in deteced_eye:
             cv.rectangle(eye_color, (ex, ey), (ex+ew, ey+eh), (255, 0, 0), 3)
 
-    cv.imshow('frame', frame)
+    cv.imshow('Face detection - \'q\' beture kilep', frame)
     if cv.waitKey(1) == ord('q'):
         break
 
